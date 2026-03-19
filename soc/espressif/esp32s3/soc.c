@@ -67,6 +67,9 @@ void IRAM_ATTR __esp_platform_app_start(void)
 	}
 #endif
 
+	/* Initialize flash chip after PSRAM so timing params are correct */
+	esp_flash_config_post_psram();
+
 	/* Start Zephyr */
 	z_prep_c();
 
