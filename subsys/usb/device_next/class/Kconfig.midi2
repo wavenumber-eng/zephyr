@@ -18,6 +18,15 @@ config USBD_MIDI2_TX_QUEUE_SIZE
 	  MIDI messages before they are sent to the USB host.
 	  The default is 64 bytes.
 
+config USBD_MIDI2_BUF_POOL_COUNT
+	int "MIDI 2.0 class UDC buffer pool count"
+	default 2
+	range 2 32
+	help
+	  Number of USB device controller buffers reserved for the MIDI 2.0
+	  class instance. Increase this when composite CDC + MIDI traffic or
+	  bursty MIDI sources exhaust the default transmit buffers.
+
 module = USBD_MIDI2
 module-str = usbd midi2
 source "subsys/logging/Kconfig.template.log_config"
