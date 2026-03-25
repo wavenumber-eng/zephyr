@@ -21,6 +21,8 @@ manifest:
   remotes:
     - name: upstream
       url-base: https://github.com/zephyrproject-rtos
+    - name: wavenumber
+      url-base: https://github.com/wavenumber-eng
     - name: babblesim
       url-base: https://github.com/BabbleSim
 
@@ -169,7 +171,8 @@ manifest:
       groups:
         - hal
     - name: hal_espressif
-      revision: dff4ebffee46789e6f2153bc1f6f655fd89a7963
+      remote: wavenumber
+      revision: refs/heads/fum-esp32s3-stable-20260318
       path: modules/hal/espressif
       west-commands: west/west-commands.yml
       groups:
