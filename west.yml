@@ -172,7 +172,7 @@ manifest:
         - hal
     - name: hal_espressif
       remote: wavenumber
-      revision: refs/heads/fum-esp32s3-stable-20260318
+      revision: fdccb443f1b524cc0c8a3d03a6b763e921cd362e
       path: modules/hal/espressif
       west-commands: west/west-commands.yml
       groups:
