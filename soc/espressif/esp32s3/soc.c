@@ -66,6 +66,10 @@ void IRAM_ATTR __esp_platform_app_start(void)
 	if (err) {
 		printk("Failed to initialize PSRAM shared multi heap (%d)\n", err);
 	}
+
+	/* Re-probe flash after PSRAM timing tuning so runtime flash/NVS
+	 * operations use the final MSPI timing parameters. */
+	esp_flash_config_post_psram();
 #endif
 
 	/* Start Zephyr */
